@@ -12,7 +12,7 @@ public class Commander extends Unit{
     }
     @Override
     public void accept(UnitVisitor visitor) {
-        visitor.commander(this);
+        visitor.visitor(this);
         super.accept(visitor);
     }
 }

@@ -13,7 +13,7 @@ public class Soldier extends Unit {
 
     @Override
     public void accept(UnitVisitor visitor) {
-        visitor.soldier(this);
+        visitor.visitor(this);
         super.accept(visitor);
     }
 }

@@ -7,9 +7,9 @@ package Visitor;
  */
 public interface UnitVisitor {
 
-    void sergeant(Sergeant sergeant);
+    void visitor(Sergeant sergeant);
 
-    void commander(Commander commander);
+    void visitor(Commander commander);
 
-    void soldier(Soldier soldier);
+    void visitor(Soldier soldier);
 }
