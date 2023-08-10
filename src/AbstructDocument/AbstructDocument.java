@@ -1,6 +1,9 @@
 package AbstructDocument;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Stream;
 
@@ -31,7 +34,7 @@ public abstract class AbstructDocument implements Document {
     public <T> Stream<T> children(String key, Function<Map<String, Object>, T> construction) {
         return Stream.of(get(key))
                 .filter(Objects::nonNull)
-                .map(el -> (List<Map<String,Object>>) el)
+                .map(el -> (List<Map<String, Object>>) el)
                 .findAny()
                 .get()
                 .stream()
