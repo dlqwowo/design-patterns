@@ -7,17 +7,17 @@ package Visitor;
  */
 public class SoldiderVisitor implements UnitVisitor{
     @Override
-    public void sergeant(Sergeant sergeant) {
+    public void visitor(Sergeant sergeant) {
 
     }
 
     @Override
-    public void commander(Commander commander) {
+    public void visitor(Commander commander) {
 
     }
 
     @Override
-    public void soldier(Soldier soldier) {
+    public void visitor(Soldier soldier) {
         System.out.println("Welcome soldier.");
     }
 }
