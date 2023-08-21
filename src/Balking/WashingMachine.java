@@ -40,7 +40,7 @@ public class WashingMachine {
 
     public void wash() {
         synchronized (this) {
-            var machineState = getWashingMachineState();
+            WashingMachineState machineState = getWashingMachineState();
             System.out.println(String.format("{}: Actual machine state: {}", Thread.currentThread().getName(), machineState));
             if (this.washingMachineState == WashingMachineState.WASHING) {
                 System.out.println("Cannot wash if the machine has been already washing!");

@@ -14,20 +14,20 @@ public class main {
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         ThreadAsyncExecutor executor = new ThreadAsyncExecutor();
-        final var asyncResult1 = executor.startProcess(lazyval(10, 500));
-        final var asyncResult2 = executor.startProcess(lazyval("test", 300));
-        final var asyncResult3 = executor.startProcess(lazyval(50L, 700));
-        final var asyncResult4 = executor.startProcess(lazyval(20, 400),callback("Deploying lunar rover"));
-        final var asyncResult5 = executor.startProcess(lazyval("callback", 600),callback("Deploying lunar rover"));
+        final AsyncResult<Integer> asyncResult1 = executor.startProcess(lazyval(10, 500));
+        final AsyncResult<String> asyncResult2 = executor.startProcess(lazyval("test", 300));
+        final AsyncResult<Long> asyncResult3 = executor.startProcess(lazyval(50L, 700));
+        final AsyncResult<Integer> asyncResult4 = executor.startProcess(lazyval(20, 400),callback("Deploying lunar rover"));
+        final AsyncResult<Integer> asyncResult5 = executor.startProcess(lazyval("callback", 600),callback("Deploying lunar rover"));
 
         Thread.sleep(350);
 
         System.out.println("Mission command is sipping coffee");
 
         // Wait for completion of the task and get result
-        final var result1 = executor.endprocess(asyncResult1);
-        final var result2 = executor.endprocess(asyncResult2);
-        final var result3 = executor.endprocess(asyncResult3);
+        final Integer result1 = executor.endprocess(asyncResult1);
+        final String result2 = executor.endprocess(asyncResult2);
+        final Long result3 = executor.endprocess(asyncResult3);
 
         // Wait for completion of the task
         asyncResult4.await();
